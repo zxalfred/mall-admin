@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
 
-import Home from './home';
+import Layout from '@/components/layout';
+import Home from '@/pages/home';
 
 class App extends Component {
   render() {
     return (
-      <Home />
+      <Router>
+        <Layout>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Redirect from="*" to="/" />
+          </Switch>
+        </Layout>
+      </Router>
     );
   }
 }
