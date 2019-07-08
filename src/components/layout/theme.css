@@ -1,25 +1,14 @@
 body {
   font-family: 'Open Sans', sans-serif;
+  background: #f3f3f3;
 }
 
 #wrapper {
   width: 100%;
-  min-height: 100vh;
-  background: #2b2e33;
 }
 
 #page-wrapper {
   padding: 15px 15px;
-  min-height: 600px;
-  background: #f3f3f3;
-}
-
-#page-inner {
-  width: 100%;
-  margin: 10px 20px 10px 0px;
-  background-color: transparent;
-  padding: 10px;
-  min-height: 1200px;
 }
 
 .text-center {
@@ -80,7 +69,10 @@ p {
   z-index: 1;
   position: fixed;
   width: 260px;
-  top: 80px;
+  top: 60px;
+  bottom: 0;
+  overflow-y: auto;
+  background: #2b2e33;
 }
 
 #page-wrapper {
@@ -103,7 +95,6 @@ p {
   padding: 0;
   margin-bottom: 20px;
   list-style: none;
-/* background-color: #FAFAFA; */
   border-radius: 0;
 }
 /*----------------------------------------------
@@ -398,6 +389,7 @@ footer p {
 }
 
 .navbar-brand b {
+  margin-right: 5px;
   color: #2DAFCB;
 }
 
@@ -405,7 +397,11 @@ footer p {
   position: relative;
   display: inline-block;
   margin: 0px;
-  padding: 0px;
+  padding: 0px 10px;
+}
+
+.top-navbar .nav > li:hover .dropdown-menu {
+  display: block;
 }
 
 .top-navbar .nav > li > a {
@@ -422,9 +418,19 @@ footer p {
   background: transparent;
 }
 
+.top-navbar .nav > li > a > span {
+  color: #666;
+  margin-right: 5px;
+}
+
 .top-navbar .dropdown-menu {
   min-width: 230px;
+  top: 98%;
   border-radius: 0 0 4px 4px;
+}
+
+.top-navbar .dropdown-menu > li > a {
+  cursor: pointer;
 }
 
 .top-navbar .dropdown-menu > li > a:hover, .top-navbar .dropdown-menu > li > a:focus {
@@ -520,11 +526,6 @@ ul.nav.nav-second-level.collapse.in {
   outline: 0;
 }
 
-.navbar-side {
-  border: none;
-  background-color: transparent;
-}
-
 .top-navbar {
   background: #fff;
   border-bottom: none;
@@ -549,18 +550,6 @@ ul.nav.nav-second-level.collapse.in {
 
 .navbar-header {
   background: transparent;
-}
-
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #B40101;
-}
-
-.navbar-default .navbar-toggle {
-  border-color: #fff;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #FFF;
 }
 
 .nav > li > a > i {
@@ -590,7 +579,6 @@ ul.nav.nav-second-level.collapse.in {
   #page-wrapper {
       margin: 0 0 0 260px;
       padding: 15px 30px;
-      min-height: 1200px;
   }
 
   .navbar-side {
@@ -600,6 +588,25 @@ ul.nav.nav-second-level.collapse.in {
 
   .navbar {
       border-radius: 0px;
+  }
+}
+
+@media(max-width: 767px) {
+  .top-navbar {
+    position: relative;
+  }
+  .top-navbar .navbar-brand {
+    width: 100%;
+  }
+  .navbar-side {
+    position: relative;
+    width: 100%;
+    top: 0;
+  }
+  #page-wrapper {
+    margin: 0;
+    padding: 15px 30px;
+    top: 0;
   }
 }
 
